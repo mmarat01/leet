@@ -31,12 +31,12 @@ class Solution:
         rev = 0
         MAX_INT = 2 ** 31 - 1 #upper bound
         MIN_INT = -2 ** 31 #lower bound
-        while (x != 0):
+        while x != 0:
             pop = x % 10 if x > 0 else x % -10 #popopop, deals with python giving a mod result based on 
             x = int(x / 10) #update
-            if ((rev > int(MAX_INT / 10)) or (rev == int(MAX_INT / 10) and pop > 7)): #overflows past upper bound
+            if rev > int(MAX_INT / 10) or (rev == int(MAX_INT / 10) and pop > 7): #overflows past upper bound
                 return 0
-            if ((rev < int(MIN_INT / 10)) or (rev == int(MIN_INT / 10) and pop < -8)): #overflows past lower bound
+            if rev < int(MIN_INT / 10) or (rev == int(MIN_INT / 10) and pop < -8): #overflows past lower bound
                 return 0
             rev = rev * 10 + pop #add it to the reversed int
         return rev

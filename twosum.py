@@ -33,7 +33,7 @@ class Solution:
         dict = {} #for hashing
         for i, v in enumerate(nums):
             comp = target - v #get complement of current element 
-            if (comp in dict): #is the complement in the dict already (as a hashed v)
+            if comp in dict: #is the complement in the dict already (as a hashed v)
                 return [dict[comp], i] #found it, return the indices in nums
             dict[v] = i #didn't find it yet, so hash the v
         return []

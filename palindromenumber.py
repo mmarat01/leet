@@ -31,9 +31,9 @@ class Solution:
     '''
     SOLUTION 1: REVERSE FULL INTEGER AND CHECK FOR 32-BIT INT OVERFLOW
 
-        if (x < 0):
+        if x < 0:
             return False
-        if (x == self.reverse(x)):
+        if x == self.reverse(x):
             return True
         return False
         
@@ -43,7 +43,7 @@ class Solution:
         while (x):
             pop = x % 10
             x = int(x/10)
-            if ((rev > int(MAX_INT / 10)) or (rev == int(MAX_INT / 10) and pop > 7)):
+            if rev > int(MAX_INT / 10) or (rev == int(MAX_INT / 10) and pop > 7):
                 return 0
             rev = rev * 10 + pop
         return rev
@@ -55,10 +55,10 @@ class Solution:
     SOLUTION 2  : REVERSE HALF INTEGER ONLY TO AVOID OVERFLOW
     '''
     def isPalindrome(self, x: int) -> bool:
-        if (x < 0 or (x != 0 and x % 10 == 0)): #negatives and numbers ending in 0 that aren't 0
+        if x < 0 or (x != 0 and x % 10 == 0): #negatives and numbers ending in 0 that aren't 0
             return False
         revh = 0
-        while (x > revh): #while left hand is greater than reversed right hand
+        while x > revh: #while left hand is greater than reversed right hand
             pop = x % 10
             x = int(x / 10)
             revh = revh * 10 + pop

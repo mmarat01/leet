@@ -30,7 +30,7 @@ class Solution:
             curr = rome[s[i]] #we do it this way because--
             prev = rome[s[i - 1]] if i > 0 else curr #L to R could go beyond the str
             
-            if (curr > prev): #roman num rule
+            if curr > prev: #roman num rule
                 result += curr - 2 * prev #multiply to amend appending prev before
             else:
                 result += curr
