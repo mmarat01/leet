@@ -16,7 +16,7 @@ class Solution:
         plen = len(strs[0])
         
         for s in strs[1:]: # for all strings, 2nd onwards
-            while pref != s[0:plen]: # while pref we assumed is too big (high expectations), shorten it until it matches prefix in current word
+            while pref != s[0:plen]: # while pref we assumed is too big (high expectations), shorten it until ixt matches prefix in current word
                 plen -= 1 
                 pref = pref[0:plen] 
                 if plen == 0: # basically no match at all
