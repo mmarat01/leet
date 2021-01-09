@@ -30,12 +30,12 @@
 
 class Solution:
     def two_sum(self, nums, target):
-        dict = {} #for hashing
+        mydict = {} #for hashing
         for i, v in enumerate(nums):
             comp = target - v #get complement of current element 
-            if comp in dict: #is the complement in the dict already (as a hashed v)
-                return [dict[comp], i] #found it, return the indices in nums
-            dict[v] = i #didn't find it yet, so hash the v
+            if comp in mydict: #is the complement in the dict already (as a hashed v)
+                return [mydict[comp], i] #found it, return the indices in nums
+            mydict[v] = i #didn't find it yet, so hash the v
         return []
 
 s = Solution()
